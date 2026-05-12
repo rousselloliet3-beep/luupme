@@ -4,160 +4,132 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ── LUUPME · Design System ─────────────────────────────────────────────────
+   Paleta optimizada para conversión SaaS B2B:
+   · brand-*  → azul profundo (confianza, premium tech, data segura)
+   · accent-* → coral cálido  (CTAs con CTR más alto documentado)
+   · success  → verde (solo métricas y checks)
+   · ink-*    → neutros cálidos (más premium que slate frío)
+   ────────────────────────────────────────────────────────────────────────── */
+
 @theme inline {
+  /* ── Brand (azul) — uso: links, badges, iconos. NO en CTAs ─────────────── */
+  --color-brand-50:  #EEF2FF;
+  --color-brand-100: #E0E7FF;
+  --color-brand-200: #C7D2FE;
+  --color-brand-300: #A5B4FC;
+  --color-brand-400: #818CF8;
+  --color-brand-500: #6366F1;
+  --color-brand-600: #4F46E5;
+  --color-brand-700: #4338CA;
+  --color-brand-800: #3730A3;
+  --color-brand-900: #312E81;
+  --color-brand-950: #1E1B4B;
+
+  /* ── Accent (coral) — uso: CTAs SIEMPRE. Nunca azul, nunca gradiente ──── */
+  --color-accent-50:  #FFF1ED;
+  --color-accent-100: #FFE0D4;
+  --color-accent-200: #FFBFA8;
+  --color-accent-300: #FF9572;
+  --color-accent-400: #FF6B3D;
+  --color-accent-500: #FF5722;
+  --color-accent-600: #ED4515;
+  --color-accent-700: #C53711;
+  --color-accent-800: #9C2C0E;
+  --color-accent-900: #7A220B;
+
+  /* ── Success — uso: solo en resultados, "+30%", checks ─────────────────── */
+  --color-success-500: #10B981;
+  --color-success-600: #059669;
+
+  /* ── Ink (neutros cálidos) — texto y fondos ────────────────────────────── */
+  --color-ink-50:  #FAFAF9;
+  --color-ink-100: #F5F5F4;
+  --color-ink-200: #E7E5E4;
+  --color-ink-300: #D6D3D1;
+  --color-ink-400: #A8A29E;
+  --color-ink-500: #78716C;
+  --color-ink-600: #57534E;
+  --color-ink-700: #44403C;
+  --color-ink-800: #292524;
+  --color-ink-900: #1C1917;
+  --color-ink-950: #0C0A09;
+
+  /* ── Shadcn tokens mapeados al sistema ─────────────────────────────────── */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-heading);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --color-brand: var(--brand);
-  --color-brand-foreground: var(--brand-foreground);
-  --color-gold: var(--gold);
-  --color-gold-foreground: var(--gold-foreground);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* ── Fuentes ───────────────────────────────────────────────────────────── */
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
+
+  /* ── Radios ────────────────────────────────────────────────────────────── */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* ── LUUPME Design System ────────────────────────────────────────────────────
-   Paleta de conversión basada en psicología del color:
-   · Índigo violeta  → lealtad, confianza, exclusividad (diferencia del azul genérico)
-   · Ámbar dorado    → recompensa, valor, dinero (CTAs que invitan a la acción)
-   · Crema cálida    → fondo que reduce estrés visual, más tiempo en página
-   · Negro índigo    → secciones oscuras con profundidad sin frialdad
-   ─────────────────────────────────────────────────────────────────────────── */
-
 :root {
-  /* Fondos */
-  --background: oklch(0.99 0.004 90);       /* Crema cálida — no blanco puro */
-  --foreground: oklch(0.11 0.025 278);      /* Negro con undertone índigo */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.11 0.025 278);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.11 0.025 278);
-
-  /* Primario: Índigo violeta profundo */
-  --primary: oklch(0.48 0.21 278);          /* #4338CA equivalente en oklch */
-  --primary-foreground: oklch(0.99 0 0);
-
-  /* Secundario: Índigo suave para fondos de card */
-  --secondary: oklch(0.94 0.04 278);
-  --secondary-foreground: oklch(0.35 0.18 278);
-
-  /* Muted */
-  --muted: oklch(0.95 0.01 90);
-  --muted-foreground: oklch(0.52 0.03 278);
-
-  /* Acento: Ámbar dorado — el color de la recompensa */
-  --accent: oklch(0.78 0.16 72);            /* #F59E0B equivalente */
-  --accent-foreground: oklch(0.15 0.03 278);
-
-  /* Tokens de marca extras */
-  --brand: oklch(0.48 0.21 278);            /* Índigo — identidad principal */
-  --brand-foreground: oklch(0.99 0 0);
-  --gold: oklch(0.78 0.16 72);              /* Ámbar — CTAs y highlights */
-  --gold-foreground: oklch(0.15 0.03 278);
-
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.90 0.02 278);
-  --input: oklch(0.90 0.02 278);
-  --ring: oklch(0.48 0.21 278);
-
-  --chart-1: oklch(0.48 0.21 278);
-  --chart-2: oklch(0.78 0.16 72);
-  --chart-3: oklch(0.62 0.18 278);
-  --chart-4: oklch(0.88 0.10 72);
-  --chart-5: oklch(0.35 0.18 278);
-
-  --radius: 0.75rem;
-
-  --sidebar: oklch(0.97 0.02 278);
-  --sidebar-foreground: oklch(0.11 0.025 278);
-  --sidebar-primary: oklch(0.48 0.21 278);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.94 0.04 278);
-  --sidebar-accent-foreground: oklch(0.35 0.18 278);
-  --sidebar-border: oklch(0.90 0.02 278);
-  --sidebar-ring: oklch(0.48 0.21 278);
+  --background: #FAFAF9;             /* ink-50 */
+  --foreground: #1C1917;             /* ink-900 */
+  --card: #FFFFFF;
+  --card-foreground: #1C1917;
+  --popover: #FFFFFF;
+  --popover-foreground: #1C1917;
+  --primary: #4F46E5;                /* brand-600 — links, badges, iconos */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F5F4;              /* ink-100 */
+  --secondary-foreground: #1C1917;
+  --muted: #F5F5F4;
+  --muted-foreground: #78716C;       /* ink-500 */
+  --accent: #FF5722;                 /* accent-500 — CTAs */
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #E7E5E4;                 /* ink-200 */
+  --input: #E7E5E4;
+  --ring: #FF5722;                   /* coral focus ring matches CTA */
+  --radius: 0.875rem;
 }
 
 .dark {
-  --background: oklch(0.11 0.025 278);     /* Negro índigo profundo */
-  --foreground: oklch(0.97 0.005 90);      /* Crema clara */
-  --card: oklch(0.16 0.03 278);
-  --card-foreground: oklch(0.97 0.005 90);
-  --popover: oklch(0.16 0.03 278);
-  --popover-foreground: oklch(0.97 0.005 90);
-
-  --primary: oklch(0.72 0.18 278);         /* Índigo más claro en dark */
-  --primary-foreground: oklch(0.11 0.025 278);
-
-  --secondary: oklch(0.20 0.05 278);
-  --secondary-foreground: oklch(0.97 0.005 90);
-
-  --muted: oklch(0.20 0.03 278);
-  --muted-foreground: oklch(0.65 0.05 278);
-
-  --accent: oklch(0.78 0.16 72);
-  --accent-foreground: oklch(0.11 0.025 278);
-
-  --brand: oklch(0.72 0.18 278);
-  --brand-foreground: oklch(0.11 0.025 278);
-  --gold: oklch(0.78 0.16 72);
-  --gold-foreground: oklch(0.11 0.025 278);
-
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.72 0.18 278);
-
-  --chart-1: oklch(0.72 0.18 278);
-  --chart-2: oklch(0.78 0.16 72);
-  --chart-3: oklch(0.58 0.16 278);
-  --chart-4: oklch(0.88 0.10 72);
-  --chart-5: oklch(0.45 0.15 278);
-
-  --sidebar: oklch(0.16 0.03 278);
-  --sidebar-foreground: oklch(0.97 0.005 90);
-  --sidebar-primary: oklch(0.72 0.18 278);
-  --sidebar-primary-foreground: oklch(0.11 0.025 278);
-  --sidebar-accent: oklch(0.20 0.05 278);
-  --sidebar-accent-foreground: oklch(0.97 0.005 90);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.72 0.18 278);
+  --background: #0C0A09;             /* ink-950 */
+  --foreground: #FAFAF9;             /* ink-50 */
+  --card: #1C1917;
+  --card-foreground: #FAFAF9;
+  --popover: #1C1917;
+  --popover-foreground: #FAFAF9;
+  --primary: #818CF8;                /* brand-400 */
+  --primary-foreground: #1E1B4B;
+  --secondary: #292524;              /* ink-800 */
+  --secondary-foreground: #FAFAF9;
+  --muted: #292524;
+  --muted-foreground: #A8A29E;       /* ink-400 */
+  --accent: #FF6B3D;                 /* accent-400 — más luminoso en dark */
+  --accent-foreground: #1C1917;
+  --destructive: #EF4444;
+  --border: #292524;
+  --input: #292524;
+  --ring: #FF6B3D;
 }
 
 @layer base {
@@ -169,9 +141,7 @@
   }
 }
 
-/* ── Cult UI: Cosmic Button keyframes ───────────────────────────────────────
-   Adaptados a paleta Luupme: índigo → violeta → ámbar en lugar de lime
-   ─────────────────────────────────────────────────────────────────────────── */
+/* ── Cosmic Button keyframes (lo usa el cosmic-button de Cult UI) ─────────── */
 @keyframes cosmic-spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }

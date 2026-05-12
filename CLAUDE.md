@@ -51,16 +51,28 @@ Evitar:
 
 ## Identidad visual
 
-### Paleta de conversión (aplicada en globals.css)
-- **Primario:** Índigo violeta `oklch(0.48 0.21 278)` ≈ `#4338CA` — lealtad, confianza, premium
-- **Acento/CTA:** Ámbar dorado `oklch(0.78 0.16 72)` ≈ `#F59E0B` — recompensa, valor, acción
-- **Background:** Crema cálida `oklch(0.99 0.004 90)` — reduce estrés visual
-- **Dark sections:** Negro índigo `oklch(0.11 0.025 278)` — profundidad sin frialdad
+### Paleta (definida en globals.css como tokens `@theme inline`)
+
+| Escala | Uso | Tokens clave |
+|---|---|---|
+| `brand-*` (azul `#6366F1` base) | Links, badges, iconos, elementos de UI. **NUNCA en CTAs.** | `brand-600` primario UI |
+| `accent-*` (coral `#FF5722` base) | **CTAs SIEMPRE.** Nunca azul, nunca gradiente. | `accent-500` CTA principal |
+| `success-*` (verde `#10B981`) | Solo métricas y checks ("+30%", "2x"). | `success-500` |
+| `ink-*` (neutros cálidos) | Texto, fondos, bordes. Más premium que slate frío. | `ink-50` bg, `ink-900` texto |
+
+Tokens shadcn (`--primary`, `--accent`, etc.) mapeados al sistema:
+- `--primary` → `brand-600` (UI)
+- `--accent` → `accent-500` (CTAs)
+- `--background` → `ink-50`
+- `--foreground` → `ink-900`
 
 ### Tipografía
-- **Display/headlines:** Playfair Display (serif, elegante — coincide con el logo LUUPME)
-- **Body:** Geist Sans (variable `--font-sans`)
-- Headlines grandes en hero (text-5xl a text-7xl), leading-tight
+- **Body y UI:** Geist (var `--font-sans` / `--font-geist`), weight 400-500
+- **Display/headlines:** Geist weight 600-700 + `tracking-tight`
+- **Acentos editoriales:** Instrument Serif italic (var `--font-serif`) — 1 palabra clave por headline
+- **Mono:** Geist Mono (var `--font-mono`) — badges, métricas pequeñas
+
+Escala mobile → desktop: H1 `text-4xl → text-7xl`, H2 `text-3xl → text-5xl`, body `text-base → text-lg`.
 
 ### Estilo general
 - Mucho espacio en blanco, jerarquía clara
@@ -118,16 +130,25 @@ Inspirarse en: linear.app, vercel.com, stripe.com, attio.com, cal.com
 - Imágenes con `next/image`, lazy load por default
 - Sin `any` en TypeScript
 
-## Cult UI — componentes instalados
+## Componentes base
 
+### Propios
 | Componente | Ubicación | Uso |
 |---|---|---|
-| `HeroStaticRadialGradient` | `components/ui/` | Fondo del hero |
-| `GradientHeading` | `components/ui/` | Headlines principales |
-| `CosmicButton` | `components/ui/` | CTAs primarios (repalettizado índigo-ámbar) |
-| `AnimatedNumber` | `components/ui/` | Stats con trigger en viewport |
-| `LogoCarousel` | `components/ui/` | Logos de clientes |
-| `ShiftCard` | `components/ui/` | Feature cards con hover reveal |
+| `LiquidGlass` | `components/ui/liquid-glass.tsx` | Superficie cristal Apple 2025. 3 intensidades. Requiere color detrás. |
+
+### Cult UI instalados
+| Componente | Estado |
+|---|---|
+| `cosmic-button` | Necesita repalettearse a coral (accent-500) cuando se use en CTAs |
+| `gradient-heading`, `animated-number`, `logo-carousel`, `shift-card`, `hero-static-radial-gradient` | Disponibles |
+
+### Cult UI a instalar en siguientes pasos
+- `hero-liquid-metal` — palabra clave del hero
+- `dynamic-island` — notificaciones sobre mockups
+- `family-drawer` — menú mobile
+- `text-animate` — títulos de Problema
+- `three-d-carousel` — sección Tipos de tarjeta
 
 ## Skills activas (.claude/skills/)
 
